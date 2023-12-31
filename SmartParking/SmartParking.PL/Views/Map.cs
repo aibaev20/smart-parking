@@ -14,14 +14,14 @@ using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsPresentation;
 
 
-namespace SmartParking.PL
+namespace SmartParking.PL.Views
 {
-    public partial class Form1 : Form
+    public partial class BurgasMap : Form
     {
         private bool isDragging = false;
         private Point lastMousePosition;
 
-        public Form1()
+        public BurgasMap()
         {
             InitializeComponent();
             InitializeMap();
@@ -30,24 +30,25 @@ namespace SmartParking.PL
         private void InitializeMap()
         {
             // Set up GMapControl with OpenStreetMap provider
-            gMapControl1.MapProvider = GMapProviders.OpenStreetMap;
+            burgasGMapControl.MapProvider = GMapProviders.OpenStreetMap;
+            // Fetch map data from the server and cache it for future use
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
 
-            gMapControl1.ShowCenter = false;
+            burgasGMapControl.ShowCenter = false;
 
             // Set initial coordinates for Burgas
             double lat = 42.5047;
             double lng = 27.4626;
 
             // Set the initial position and zoom level
-            gMapControl1.Position = new PointLatLng(lat, lng);
-            gMapControl1.MinZoom = 5;
-            gMapControl1.MaxZoom = 20;
-            gMapControl1.Zoom = 12;
+            burgasGMapControl.Position = new PointLatLng(lat, lng);
+            burgasGMapControl.MinZoom = 5;
+            burgasGMapControl.MaxZoom = 20;
+            burgasGMapControl.Zoom = 12;
 
         }
 
-        private void gMapControl1_MouseDown(object sender, MouseEventArgs e)
+        private void burgasGMapControl_MouseDown(object sender, MouseEventArgs e)
         {
             // Start dragging when right mouse button is pressed
             if (e.Button == MouseButtons.Right)
@@ -57,7 +58,7 @@ namespace SmartParking.PL
             }
         }
 
-        private void gMapControl1_MouseMove(object sender, MouseEventArgs e)
+        private void burgasGMapControl_MouseMove(object sender, MouseEventArgs e)
         {
             // Handle dragging to move the map
             if (isDragging)
@@ -67,16 +68,16 @@ namespace SmartParking.PL
                 int deltaY = e.Y - lastMousePosition.Y;
 
                 // Adjust the map's position based on the mouse movement
-                gMapControl1.Position = new PointLatLng(
-                    gMapControl1.Position.Lat + gMapControl1.FromLocalToLatLng(deltaY, deltaX).Lat,
-                    gMapControl1.Position.Lng + gMapControl1.FromLocalToLatLng(deltaY, deltaX).Lng);
+                burgasGMapControl.Position = new PointLatLng(
+                    burgasGMapControl.Position.Lat + burgasGMapControl.FromLocalToLatLng(deltaY, deltaX).Lat,
+                    burgasGMapControl.Position.Lng + burgasGMapControl.FromLocalToLatLng(deltaY, deltaX).Lng);
 
                 // Update the last mouse position
                 lastMousePosition = e.Location;
             }
         }
 
-        private void gMapControl1_MouseUp(object sender, MouseEventArgs e)
+        private void burgasGMapControl_MouseUp(object sender, MouseEventArgs e)
         {
             // Stop dragging when right mouse button is released
             if (e.Button == MouseButtons.Right)
