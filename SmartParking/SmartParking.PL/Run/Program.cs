@@ -17,7 +17,7 @@ namespace SmartParking.PL.Run
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BurgasMap());
+            Application.Run(new LoginForm());
         }
     }
 }

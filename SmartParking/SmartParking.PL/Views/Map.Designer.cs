@@ -1,6 +1,6 @@
 ﻿namespace SmartParking.PL.Views
 {
-    partial class BurgasMap
+    partial class Map
     {
         /// <summary>
         /// Required designer variable.
@@ -54,17 +54,17 @@
             this.burgasGMapControl.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.burgasGMapControl.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.burgasGMapControl.ShowTileGridLines = false;
-            this.burgasGMapControl.Size = new System.Drawing.Size(800, 450);
+            this.burgasGMapControl.Size = new System.Drawing.Size(1189, 649);
             this.burgasGMapControl.TabIndex = 0;
             this.burgasGMapControl.Zoom = 0D;
             // 
-            // BurgasMap
+            // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1189, 649);
             this.Controls.Add(this.burgasGMapControl);
-            this.Name = "BurgasMap";
+            this.Name = "Map";
             this.Text = "App";
             this.ResumeLayout(false);
 

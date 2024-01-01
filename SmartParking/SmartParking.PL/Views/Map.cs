@@ -16,12 +16,23 @@ using GMap.NET.WindowsPresentation;
 
 namespace SmartParking.PL.Views
 {
-    public partial class BurgasMap : Form
+    public partial class Map : Form
     {
         private bool isDragging = false;
         private Point lastMousePosition;
 
-        public BurgasMap()
+        private static Map instance;
+
+        public static Map GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Map();
+            }
+            return instance;
+        }
+
+        public Map()
         {
             InitializeComponent();
             InitializeMap();
