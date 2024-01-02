@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\ChooseRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChooseRole.Designer.cs">
+      <DependentUpon>ChooseRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="Run\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\ChooseRole.resx">
+      <DependentUpon>ChooseRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,6 +141,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-w-white-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

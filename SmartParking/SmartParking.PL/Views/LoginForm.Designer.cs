@@ -31,8 +31,9 @@ namespace SmartParking.PL.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
             this.inputGroup = new System.Windows.Forms.GroupBox();
+            this.passwordIcon = new System.Windows.Forms.PictureBox();
+            this.emailIcon = new System.Windows.Forms.PictureBox();
             this.password = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.incorrectCredentials = new System.Windows.Forms.Label();
@@ -40,24 +41,17 @@ namespace SmartParking.PL.Views
             this.newAccountLabel = new System.Windows.Forms.Label();
             this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
             this.exitButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.inputGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.BackColor = System.Drawing.Color.White;
-            this.logo.Image = global::SmartParking.PL.Properties.Resources.logo_w_white_bg;
-            this.logo.Location = new System.Drawing.Point(89, 75);
-            this.logo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(502, 123);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 0;
-            this.logo.TabStop = false;
             // 
             // inputGroup
             // 
+            this.inputGroup.Controls.Add(this.passwordIcon);
+            this.inputGroup.Controls.Add(this.emailIcon);
             this.inputGroup.Controls.Add(this.password);
             this.inputGroup.Controls.Add(this.email);
             this.inputGroup.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Bold);
@@ -71,15 +65,35 @@ namespace SmartParking.PL.Views
             this.inputGroup.TabStop = false;
             this.inputGroup.Text = "Login";
             // 
+            // passwordIcon
+            // 
+            this.passwordIcon.Image = global::SmartParking.PL.Properties.Resources._lock;
+            this.passwordIcon.Location = new System.Drawing.Point(29, 131);
+            this.passwordIcon.Name = "passwordIcon";
+            this.passwordIcon.Size = new System.Drawing.Size(34, 34);
+            this.passwordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.passwordIcon.TabIndex = 4;
+            this.passwordIcon.TabStop = false;
+            // 
+            // emailIcon
+            // 
+            this.emailIcon.Image = global::SmartParking.PL.Properties.Resources.at_sign;
+            this.emailIcon.Location = new System.Drawing.Point(29, 69);
+            this.emailIcon.Name = "emailIcon";
+            this.emailIcon.Size = new System.Drawing.Size(34, 34);
+            this.emailIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.emailIcon.TabIndex = 3;
+            this.emailIcon.TabStop = false;
+            // 
             // password
             // 
             this.password.Cursor = System.Windows.Forms.Cursors.Default;
             this.password.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
             this.password.ForeColor = System.Drawing.Color.DimGray;
-            this.password.Location = new System.Drawing.Point(43, 131);
+            this.password.Location = new System.Drawing.Point(69, 131);
             this.password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(300, 34);
+            this.password.Size = new System.Drawing.Size(274, 34);
             this.password.TabIndex = 2;
             this.password.Text = "Password";
             // 
@@ -88,10 +102,10 @@ namespace SmartParking.PL.Views
             this.email.Cursor = System.Windows.Forms.Cursors.Default;
             this.email.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
             this.email.ForeColor = System.Drawing.Color.DimGray;
-            this.email.Location = new System.Drawing.Point(43, 69);
+            this.email.Location = new System.Drawing.Point(69, 69);
             this.email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(300, 34);
+            this.email.Size = new System.Drawing.Size(274, 34);
             this.email.TabIndex = 1;
             this.email.Text = "E-mail";
             // 
@@ -125,7 +139,7 @@ namespace SmartParking.PL.Views
             this.newAccountLabel.AutoSize = true;
             this.newAccountLabel.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newAccountLabel.ForeColor = System.Drawing.Color.Black;
-            this.newAccountLabel.Location = new System.Drawing.Point(257, 681);
+            this.newAccountLabel.Location = new System.Drawing.Point(257, 682);
             this.newAccountLabel.Name = "newAccountLabel";
             this.newAccountLabel.Size = new System.Drawing.Size(145, 28);
             this.newAccountLabel.TabIndex = 3;
@@ -160,6 +174,18 @@ namespace SmartParking.PL.Views
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // logo
+            // 
+            this.logo.BackColor = System.Drawing.Color.White;
+            this.logo.Image = global::SmartParking.PL.Properties.Resources.logo_w_white_bg;
+            this.logo.Location = new System.Drawing.Point(89, 75);
+            this.logo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(502, 123);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -179,9 +205,11 @@ namespace SmartParking.PL.Views
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.inputGroup.ResumeLayout(false);
             this.inputGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +226,7 @@ namespace SmartParking.PL.Views
         private Label newAccountLabel;
         private LinkLabel signUpLinkLabel;
         private Button exitButton;
+        private PictureBox emailIcon;
+        private PictureBox passwordIcon;
     }
 }
