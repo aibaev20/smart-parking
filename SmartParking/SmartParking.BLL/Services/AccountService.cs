@@ -34,5 +34,15 @@ namespace SmartParking.BLL.Services
 
             return accountVerified;
         }
+
+        public void AddAccount(string username, string email, string password)
+        {
+            Account account = new Account();
+            account.Username = username;
+            account.Email = email;
+            account.Password = password;
+
+            repositoryInstance.AddAccount(account.Username, account.Email, account.Password);
+        }
     }
 }

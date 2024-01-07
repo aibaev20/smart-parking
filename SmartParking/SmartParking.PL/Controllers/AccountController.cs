@@ -31,5 +31,10 @@ namespace SmartParking.PL.Controllers
         {
             return serviceInstance.VerifyAccount(username, password);
         }
+
+        public void AddAccount(string username, string email, string password)
+        {
+            serviceInstance.AddAccount(username, email, password);
+        }
     }
 }

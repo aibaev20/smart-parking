@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartParking.PL.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,21 @@ namespace SmartParking.PL.Views
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            string username = this.username.Text;
+            string password = this.password.Text;
+            string email = this.email.Text;
+
+            AccountController accountController = AccountController.GetInstance();
+
+            accountController.AddAccount(username, email, password);
+
+            LoginForm loginForm = LoginForm.GetInstance();
+            loginForm.Show();
+            Hide();
         }
     }
 }
