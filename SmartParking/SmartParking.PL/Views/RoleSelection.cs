@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace SmartParking.PL.Views
 {
-    public partial class ChooseRole : Form
+    public partial class RoleSelection : Form
     {
-        private static ChooseRole instance;
-        public static ChooseRole GetInstance()
+        private static RoleSelection instance;
+        public static RoleSelection GetInstance()
         {
             if (instance == null)
             {
-                instance = new ChooseRole();
+                instance = new RoleSelection();
             }
             return instance;
         }
-        public ChooseRole()
+        public RoleSelection()
         {
             InitializeComponent();
         }
@@ -40,8 +40,8 @@ namespace SmartParking.PL.Views
 
         private void userChoice_Click(object sender, EventArgs e)
         {
-            Map map = Map.GetInstance();
-            map.Show();
+            LoginForm loginForm = LoginForm.GetInstance();
+            loginForm.Show();
             Hide();
         }
     }

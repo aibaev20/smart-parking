@@ -84,11 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\ChooseRole.cs">
+    <Compile Include="Views\RoleSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ChooseRole.Designer.cs">
-      <DependentUpon>ChooseRole.cs</DependentUpon>
+    <Compile Include="Views\RoleSelection.Designer.cs">
+      <DependentUpon>RoleSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
@@ -104,8 +104,14 @@
     </Compile>
     <Compile Include="Run\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\ChooseRole.resx">
-      <DependentUpon>ChooseRole.cs</DependentUpon>
+    <Compile Include="Views\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\RoleSelection.resx">
+      <DependentUpon>RoleSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -125,6 +131,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

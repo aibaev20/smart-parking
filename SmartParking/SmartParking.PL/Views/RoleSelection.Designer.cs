@@ -2,7 +2,7 @@
 
 namespace SmartParking.PL.Views
 {
-    partial class ChooseRole
+    partial class RoleSelection
     {
         /// <summary>
         /// Required designer variable.

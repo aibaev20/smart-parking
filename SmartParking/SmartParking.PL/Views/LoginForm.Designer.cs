@@ -33,9 +33,9 @@ namespace SmartParking.PL.Views
         {
             this.inputGroup = new System.Windows.Forms.GroupBox();
             this.passwordIcon = new System.Windows.Forms.PictureBox();
-            this.emailIcon = new System.Windows.Forms.PictureBox();
+            this.usernameIcon = new System.Windows.Forms.PictureBox();
             this.password = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
+            this.username = new System.Windows.Forms.TextBox();
             this.incorrectCredentials = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.newAccountLabel = new System.Windows.Forms.Label();
@@ -44,16 +44,16 @@ namespace SmartParking.PL.Views
             this.logo = new System.Windows.Forms.PictureBox();
             this.inputGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usernameIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // inputGroup
             // 
             this.inputGroup.Controls.Add(this.passwordIcon);
-            this.inputGroup.Controls.Add(this.emailIcon);
+            this.inputGroup.Controls.Add(this.usernameIcon);
             this.inputGroup.Controls.Add(this.password);
-            this.inputGroup.Controls.Add(this.email);
+            this.inputGroup.Controls.Add(this.username);
             this.inputGroup.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Bold);
             this.inputGroup.ForeColor = System.Drawing.SystemColors.Highlight;
             this.inputGroup.Location = new System.Drawing.Point(153, 240);
@@ -75,15 +75,15 @@ namespace SmartParking.PL.Views
             this.passwordIcon.TabIndex = 4;
             this.passwordIcon.TabStop = false;
             // 
-            // emailIcon
+            // usernameIcon
             // 
-            this.emailIcon.Image = global::SmartParking.PL.Properties.Resources.at_sign;
-            this.emailIcon.Location = new System.Drawing.Point(29, 69);
-            this.emailIcon.Name = "emailIcon";
-            this.emailIcon.Size = new System.Drawing.Size(34, 34);
-            this.emailIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.emailIcon.TabIndex = 3;
-            this.emailIcon.TabStop = false;
+            this.usernameIcon.Image = global::SmartParking.PL.Properties.Resources.user;
+            this.usernameIcon.Location = new System.Drawing.Point(29, 69);
+            this.usernameIcon.Name = "usernameIcon";
+            this.usernameIcon.Size = new System.Drawing.Size(34, 34);
+            this.usernameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.usernameIcon.TabIndex = 3;
+            this.usernameIcon.TabStop = false;
             // 
             // password
             // 
@@ -97,17 +97,17 @@ namespace SmartParking.PL.Views
             this.password.TabIndex = 2;
             this.password.Text = "Password";
             // 
-            // email
+            // username
             // 
-            this.email.Cursor = System.Windows.Forms.Cursors.Default;
-            this.email.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
-            this.email.ForeColor = System.Drawing.Color.DimGray;
-            this.email.Location = new System.Drawing.Point(69, 69);
-            this.email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(274, 34);
-            this.email.TabIndex = 1;
-            this.email.Text = "E-mail";
+            this.username.Cursor = System.Windows.Forms.Cursors.Default;
+            this.username.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
+            this.username.ForeColor = System.Drawing.Color.DimGray;
+            this.username.Location = new System.Drawing.Point(69, 69);
+            this.username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(274, 34);
+            this.username.TabIndex = 1;
+            this.username.Text = "Username";
             // 
             // incorrectCredentials
             // 
@@ -120,6 +120,7 @@ namespace SmartParking.PL.Views
             this.incorrectCredentials.TabIndex = 1;
             this.incorrectCredentials.Text = "Incorrect credentials";
             this.incorrectCredentials.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.incorrectCredentials.Visible = false;
             // 
             // loginButton
             // 
@@ -208,7 +209,7 @@ namespace SmartParking.PL.Views
             this.inputGroup.ResumeLayout(false);
             this.inputGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usernameIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,14 +220,14 @@ namespace SmartParking.PL.Views
 
         private PictureBox logo;
         private GroupBox inputGroup;
-        private TextBox email;
+        private TextBox username;
         private TextBox password;
         private Label incorrectCredentials;
         private Button loginButton;
         private Label newAccountLabel;
         private LinkLabel signUpLinkLabel;
         private Button exitButton;
-        private PictureBox emailIcon;
+        private PictureBox usernameIcon;
         private PictureBox passwordIcon;
     }
 }
