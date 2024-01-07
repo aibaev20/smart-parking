@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartParking.PL.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,24 @@ namespace SmartParking.PL.Views
         {
             Application.Exit();
         }
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            string username = this.username.Text;
+            string password = this.password.Text;
+
+            AccountController accountController = AccountController.GetInstance();
+
+            if (accountController.VerifyAccount(username, password))
+            {
+                Map map = Map.GetInstance();
+                map.Show();
+                Hide();
+            }
+            else
+            {
+                incorrectCredentials.Visible = true;
+            }
+        }
 
         private void signUpLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -40,5 +59,6 @@ namespace SmartParking.PL.Views
             signUp.Show();
             Hide();
         }
+
     }
 }

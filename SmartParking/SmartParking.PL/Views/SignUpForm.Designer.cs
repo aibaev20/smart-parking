@@ -89,7 +89,7 @@
             this.inputGroup.Size = new System.Drawing.Size(376, 260);
             this.inputGroup.TabIndex = 9;
             this.inputGroup.TabStop = false;
-            this.inputGroup.Text = "Login";
+            this.inputGroup.Text = "Sign Up";
             // 
             // emailIcon
             // 

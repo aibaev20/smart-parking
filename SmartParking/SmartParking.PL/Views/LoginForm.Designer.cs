@@ -134,6 +134,7 @@ namespace SmartParking.PL.Views
             this.loginButton.TabIndex = 2;
             this.loginButton.Text = "LOGIN";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // newAccountLabel
             // 
