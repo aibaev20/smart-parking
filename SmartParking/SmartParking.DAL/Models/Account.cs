@@ -6,9 +6,25 @@ namespace SmartParking.DAL.Models
 {
     public class Account
     {
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        private string username;
+        private string email;
+        private string password;
+
+        public string Username
+        { 
+            get { return username; } 
+            set { username = value; } 
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
 
         public Account()
         {

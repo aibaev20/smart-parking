@@ -47,5 +47,69 @@ namespace SmartParking.PL.Views
             loginForm.Show();
             Hide();
         }
+
+        private void id_Click(object sender, EventArgs e)
+        {
+            if (id.Text == "Id")
+            {
+                id.Text = string.Empty;
+            }
+        }
+
+        private void id_Leave(object sender, EventArgs e)
+        {
+            if (id.Text == string.Empty)
+            {
+                id.Text = "Id";
+            }
+        }
+
+        private void email_Click(object sender, EventArgs e)
+        {
+            if (email.Text == "Email")
+            {
+                email.Text = string.Empty;
+            }
+        }
+
+        private void email_Leave(object sender, EventArgs e)
+        {
+            if (email.Text == string.Empty)
+            {
+                email.Text = "Email";
+            }
+        }
+
+        private void username_Click(object sender, EventArgs e)
+        {
+            if (username.Text == "Username")
+            {
+                username.Text = string.Empty;
+            }
+        }
+
+        private void username_Leave(object sender, EventArgs e)
+        {
+            if (username.Text == string.Empty)
+            {
+                username.Text = "Username";
+            }
+        }
+
+        private void password_Click(object sender, EventArgs e)
+        {
+            if (password.Text == "Password")
+            {
+                password.Text = string.Empty;
+            }
+        }
+
+        private void password_Leave(object sender, EventArgs e)
+        {
+            if (password.Text == string.Empty)
+            {
+                password.Text = "Password";
+            }
+        }
     }
 }
