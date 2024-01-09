@@ -43,6 +43,25 @@ namespace SmartParking.DAL.Repositories
             return count > 0;
         }
 
+        public bool IsEmailAlreadyRegistered(string email)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT COUNT(*) FROM [Accounts] WHERE [Email] = @Email";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Email", email);
+
+            int count = (int)command.ExecuteScalar();
+
+            connection.Close();
+
+            return count > 0;
+        }
+
         public void AddAccount(string username, string email, string password)
         {
             SqlConnection connection = DBConnection.GetInstance();

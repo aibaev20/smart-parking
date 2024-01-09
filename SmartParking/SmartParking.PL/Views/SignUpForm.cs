@@ -41,27 +41,17 @@ namespace SmartParking.PL.Views
 
             AccountController accountController = AccountController.GetInstance();
 
+            if (accountController.IsEmailAlreadyRegistered(email))
+            {
+                incorrectEmail.Visible = true;
+                return;
+            }
+
             accountController.AddAccount(username, email, password);
 
             LoginForm loginForm = LoginForm.GetInstance();
             loginForm.Show();
             Hide();
-        }
-
-        private void id_Click(object sender, EventArgs e)
-        {
-            if (id.Text == "Id")
-            {
-                id.Text = string.Empty;
-            }
-        }
-
-        private void id_Leave(object sender, EventArgs e)
-        {
-            if (id.Text == string.Empty)
-            {
-                id.Text = "Id";
-            }
         }
 
         private void email_Click(object sender, EventArgs e)
