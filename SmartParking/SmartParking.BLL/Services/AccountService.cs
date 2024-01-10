@@ -35,12 +35,18 @@ namespace SmartParking.BLL.Services
             return accountVerified;
         }
 
-        public bool IsEmailAlreadyRegistered(string email)
+        public bool IsAccountAlreadyRegistered(string email, string username)
         {
             Account account = new Account();
             account.Email = email;
+            account.Username = username;
 
-            return repositoryInstance.IsEmailAlreadyRegistered(account.Email);
+            return repositoryInstance.IsAccountAlreadyRegistered(account.Email, account.Username);
+        }
+
+        public bool IsAdmin(string username)
+        {
+            return repositoryInstance.IsAdmin(username);
         }
 
         public void AddAccount(string username, string email, string password)

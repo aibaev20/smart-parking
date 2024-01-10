@@ -32,9 +32,14 @@ namespace SmartParking.PL.Controllers
             return serviceInstance.VerifyAccount(username, password);
         }
 
-        public bool IsEmailAlreadyRegistered(string email)
+        public bool IsAccountAlreadyRegistered(string email, string username)
         {
-            return serviceInstance.IsEmailAlreadyRegistered(email);
+            return serviceInstance.IsAccountAlreadyRegistered(email, username);
+        }
+
+        public bool IsAdmin(string username)
+        {
+            return serviceInstance.IsAdmin(username);
         }
 
         public void AddAccount(string username, string email, string password)

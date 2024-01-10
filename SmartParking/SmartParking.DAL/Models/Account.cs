@@ -9,6 +9,7 @@ namespace SmartParking.DAL.Models
         private string username;
         private string email;
         private string password;
+        private string role;
 
         public string Username
         { 
@@ -25,12 +26,18 @@ namespace SmartParking.DAL.Models
             get { return password; }
             set { password = value; }
         }
+        public string Role
+        {
+            get { return role; }
+            set { role = value; }
+        }
 
         public Account()
         {
             Username = "NotDefined";
             Email = "NotDefined";
             Password = "NotDefined";
+            Role = "NotDefined";
         }
     }
 }

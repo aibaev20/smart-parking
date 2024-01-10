@@ -41,6 +41,7 @@
             this.burgasGMapControl.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.burgasGMapControl.LevelsKeepInMemory = 5;
             this.burgasGMapControl.Location = new System.Drawing.Point(0, 0);
+            this.burgasGMapControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.burgasGMapControl.MarkersEnabled = true;
             this.burgasGMapControl.MaxZoom = 2;
             this.burgasGMapControl.MinZoom = 2;
@@ -54,16 +55,17 @@
             this.burgasGMapControl.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.burgasGMapControl.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.burgasGMapControl.ShowTileGridLines = false;
-            this.burgasGMapControl.Size = new System.Drawing.Size(1189, 649);
+            this.burgasGMapControl.Size = new System.Drawing.Size(991, 541);
             this.burgasGMapControl.TabIndex = 0;
             this.burgasGMapControl.Zoom = 0D;
             // 
             // Map
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1189, 649);
+            this.ClientSize = new System.Drawing.Size(991, 541);
             this.Controls.Add(this.burgasGMapControl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Map";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App";

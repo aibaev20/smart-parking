@@ -38,7 +38,7 @@
             this.username = new System.Windows.Forms.TextBox();
             this.signUpButton = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.incorrectEmail = new System.Windows.Forms.Label();
+            this.incorrectEmailOrUsername = new System.Windows.Forms.Label();
             this.inputGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).BeginInit();
@@ -162,7 +162,7 @@
             this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUpButton.ForeColor = System.Drawing.Color.White;
-            this.signUpButton.Location = new System.Drawing.Point(250, 660);
+            this.signUpButton.Location = new System.Drawing.Point(250, 630);
             this.signUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.Size = new System.Drawing.Size(179, 53);
@@ -183,19 +183,19 @@
             this.logo.TabIndex = 8;
             this.logo.TabStop = false;
             // 
-            // incorrectEmail
+            // incorrectEmailOrUsername
             // 
-            this.incorrectEmail.AutoSize = true;
-            this.incorrectEmail.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incorrectEmail.ForeColor = System.Drawing.Color.Red;
-            this.incorrectEmail.Location = new System.Drawing.Point(195, 565);
-            this.incorrectEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.incorrectEmail.Name = "incorrectEmail";
-            this.incorrectEmail.Size = new System.Drawing.Size(290, 38);
-            this.incorrectEmail.TabIndex = 11;
-            this.incorrectEmail.Text = "Email is already used";
-            this.incorrectEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.incorrectEmail.Visible = false;
+            this.incorrectEmailOrUsername.AutoSize = true;
+            this.incorrectEmailOrUsername.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incorrectEmailOrUsername.ForeColor = System.Drawing.Color.Red;
+            this.incorrectEmailOrUsername.Location = new System.Drawing.Point(125, 550);
+            this.incorrectEmailOrUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.incorrectEmailOrUsername.Name = "incorrectEmailOrUsername";
+            this.incorrectEmailOrUsername.Size = new System.Drawing.Size(434, 38);
+            this.incorrectEmailOrUsername.TabIndex = 11;
+            this.incorrectEmailOrUsername.Text = "Email or username already used";
+            this.incorrectEmailOrUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.incorrectEmailOrUsername.Visible = false;
             // 
             // SignUpForm
             // 
@@ -203,7 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(671, 780);
-            this.Controls.Add(this.incorrectEmail);
+            this.Controls.Add(this.incorrectEmailOrUsername);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.inputGroup);
             this.Controls.Add(this.logo);
@@ -237,6 +237,6 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Button signUpButton;
-        private System.Windows.Forms.Label incorrectEmail;
+        private System.Windows.Forms.Label incorrectEmailOrUsername;
     }
 }

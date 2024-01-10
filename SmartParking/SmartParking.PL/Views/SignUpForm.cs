@@ -41,9 +41,9 @@ namespace SmartParking.PL.Views
 
             AccountController accountController = AccountController.GetInstance();
 
-            if (accountController.IsEmailAlreadyRegistered(email))
+            if (accountController.IsAccountAlreadyRegistered(email, username))
             {
-                incorrectEmail.Visible = true;
+                incorrectEmailOrUsername.Visible = true;
                 return;
             }
 

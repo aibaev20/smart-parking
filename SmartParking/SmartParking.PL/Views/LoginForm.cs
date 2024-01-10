@@ -14,6 +14,7 @@ namespace SmartParking.PL.Views
     public partial class LoginForm : Form
     {
         private static LoginForm instance;
+        private static AccountController accountController = AccountController.GetInstance();
         public static LoginForm GetInstance()
         {
             if (instance == null)
@@ -39,13 +40,12 @@ namespace SmartParking.PL.Views
             string username = this.username.Text;
             string password = this.password.Text;
 
-            AccountController accountController = AccountController.GetInstance();
-
             if (accountController.VerifyAccount(username, password))
             {
-                Map map = Map.GetInstance();
+                Map map = Map.GetInstance(username);
                 map.Show();
                 Hide();
+                
             }
             else
             {

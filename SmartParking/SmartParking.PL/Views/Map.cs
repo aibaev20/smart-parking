@@ -12,28 +12,30 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsPresentation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using SmartParking.PL.Controllers;
 
 
 namespace SmartParking.PL.Views
 {
     public partial class Map : Form
     {
-        private bool isDragging = false;
-        private Point lastMousePosition;
-
+        private static AccountController accountController = AccountController.GetInstance();
+        public static bool isAdmin;
         private static Map instance;
 
-        public static Map GetInstance()
+        public static Map GetInstance(string username)
         {
             if (instance == null)
             {
-                instance = new Map();
+                instance = new Map(username);
             }
             return instance;
         }
 
-        public Map()
+        public Map(string username)
         {
+            isAdmin = accountController.IsAdmin(username);
             InitializeComponent();
             InitializeMap();
         }
@@ -56,45 +58,7 @@ namespace SmartParking.PL.Views
             burgasGMapControl.MinZoom = 5;
             burgasGMapControl.MaxZoom = 20;
             burgasGMapControl.Zoom = 12;
-
         }
 
-        private void burgasGMapControl_MouseDown(object sender, MouseEventArgs e)
-        {
-            // Start dragging when right mouse button is pressed
-            if (e.Button == MouseButtons.Right)
-            {
-                isDragging = true;
-                lastMousePosition = e.Location;
-            }
-        }
-
-        private void burgasGMapControl_MouseMove(object sender, MouseEventArgs e)
-        {
-            // Handle dragging to move the map
-            if (isDragging)
-            {
-                // Calculate the change in mouse position
-                int deltaX = e.X - lastMousePosition.X;
-                int deltaY = e.Y - lastMousePosition.Y;
-
-                // Adjust the map's position based on the mouse movement
-                burgasGMapControl.Position = new PointLatLng(
-                    burgasGMapControl.Position.Lat + burgasGMapControl.FromLocalToLatLng(deltaY, deltaX).Lat,
-                    burgasGMapControl.Position.Lng + burgasGMapControl.FromLocalToLatLng(deltaY, deltaX).Lng);
-
-                // Update the last mouse position
-                lastMousePosition = e.Location;
-            }
-        }
-
-        private void burgasGMapControl_MouseUp(object sender, MouseEventArgs e)
-        {
-            // Stop dragging when right mouse button is released
-            if (e.Button == MouseButtons.Right)
-            {
-                isDragging = false;
-            }
-        }
     }
 }
