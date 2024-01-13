@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SmartParking.BLL.Services
 {
-    public class AccountService
+    public class AccountService : IAccountService
     {
         private static AccountService instance = null;
         private static AccountRepository repositoryInstance = AccountRepository.GetInstance();

@@ -23,6 +23,7 @@ namespace SmartParking.PL.Views
         private static AccountController accountController = AccountController.GetInstance();
         public static bool isAdmin;
         private static Map instance;
+        private GMapOverlay markersOverlay;
 
         public static Map GetInstance(string username)
         {
@@ -38,6 +39,7 @@ namespace SmartParking.PL.Views
             isAdmin = accountController.IsAdmin(username);
             InitializeComponent();
             InitializeMap();
+            AddMarkers();
         }
 
         private void InitializeMap()
@@ -46,8 +48,10 @@ namespace SmartParking.PL.Views
             burgasGMapControl.MapProvider = GMapProviders.OpenStreetMap;
             // Fetch map data from the server and cache it for future use
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
+            //GMaps.Instance.UseRouteCache = true;
 
             burgasGMapControl.ShowCenter = false;
+
 
             // Set initial coordinates for Burgas
             double lat = 42.5047;
@@ -58,7 +62,26 @@ namespace SmartParking.PL.Views
             burgasGMapControl.MinZoom = 5;
             burgasGMapControl.MaxZoom = 20;
             burgasGMapControl.Zoom = 12;
+
+            markersOverlay = new GMapOverlay("markersOverlay");
+
+            burgasGMapControl.Overlays.Add(markersOverlay);
         }
 
+        private void AddMarkers()
+        {
+            double markerLatitude = 42.50430;
+            double markerLongitude = 27.47711;
+
+            Bitmap parkingMarker = Properties.Resources.markerParkingDisabled;
+
+            GMarkerGoogle marker = new GMarkerGoogle(
+                            new PointLatLng(markerLatitude, markerLongitude),
+                            parkingMarker);
+
+            markersOverlay.Markers.Add(marker);
+
+            burgasGMapControl.Refresh();
+        }
     }
 }

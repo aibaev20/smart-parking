@@ -32,8 +32,6 @@ namespace SmartParking.PL.Views
         private void InitializeComponent()
         {
             this.inputGroup = new System.Windows.Forms.GroupBox();
-            this.passwordIcon = new System.Windows.Forms.PictureBox();
-            this.usernameIcon = new System.Windows.Forms.PictureBox();
             this.password = new System.Windows.Forms.TextBox();
             this.username = new System.Windows.Forms.TextBox();
             this.incorrectCredentials = new System.Windows.Forms.Label();
@@ -41,6 +39,8 @@ namespace SmartParking.PL.Views
             this.newAccountLabel = new System.Windows.Forms.Label();
             this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
             this.exitButton = new System.Windows.Forms.Button();
+            this.passwordIcon = new System.Windows.Forms.PictureBox();
+            this.usernameIcon = new System.Windows.Forms.PictureBox();
             this.logo = new System.Windows.Forms.PictureBox();
             this.inputGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).BeginInit();
@@ -64,28 +64,6 @@ namespace SmartParking.PL.Views
             this.inputGroup.TabIndex = 0;
             this.inputGroup.TabStop = false;
             this.inputGroup.Text = "Login";
-            // 
-            // passwordIcon
-            // 
-            this.passwordIcon.Image = global::SmartParking.PL.Properties.Resources._lock;
-            this.passwordIcon.Location = new System.Drawing.Point(29, 131);
-            this.passwordIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.passwordIcon.Name = "passwordIcon";
-            this.passwordIcon.Size = new System.Drawing.Size(34, 34);
-            this.passwordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.passwordIcon.TabIndex = 4;
-            this.passwordIcon.TabStop = false;
-            // 
-            // usernameIcon
-            // 
-            this.usernameIcon.Image = global::SmartParking.PL.Properties.Resources.user;
-            this.usernameIcon.Location = new System.Drawing.Point(29, 70);
-            this.usernameIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.usernameIcon.Name = "usernameIcon";
-            this.usernameIcon.Size = new System.Drawing.Size(34, 34);
-            this.usernameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.usernameIcon.TabIndex = 3;
-            this.usernameIcon.TabStop = false;
             // 
             // password
             // 
@@ -186,6 +164,28 @@ namespace SmartParking.PL.Views
             this.exitButton.UseCompatibleTextRendering = true;
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // passwordIcon
+            // 
+            this.passwordIcon.Image = global::SmartParking.PL.Properties.Resources._lock;
+            this.passwordIcon.Location = new System.Drawing.Point(29, 131);
+            this.passwordIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.passwordIcon.Name = "passwordIcon";
+            this.passwordIcon.Size = new System.Drawing.Size(34, 34);
+            this.passwordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.passwordIcon.TabIndex = 4;
+            this.passwordIcon.TabStop = false;
+            // 
+            // usernameIcon
+            // 
+            this.usernameIcon.Image = global::SmartParking.PL.Properties.Resources.user;
+            this.usernameIcon.Location = new System.Drawing.Point(29, 70);
+            this.usernameIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.usernameIcon.Name = "usernameIcon";
+            this.usernameIcon.Size = new System.Drawing.Size(34, 34);
+            this.usernameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.usernameIcon.TabIndex = 3;
+            this.usernameIcon.TabStop = false;
             // 
             // logo
             // 

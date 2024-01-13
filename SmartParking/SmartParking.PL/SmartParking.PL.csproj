@@ -170,6 +170,18 @@
   <ItemGroup>
     <None Include="Resources\key.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\markerAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\markerDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\markerLargeParking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\markerParkingDisabled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
