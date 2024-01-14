@@ -92,5 +92,15 @@ namespace SmartParking.BLL.Services
 
             return repositoryInstance.GetChargerWorkingHoursById(marker.Id);
         }
+
+        public void UpdateLargeParkings(string parkingSpaces, string monthlySubscriptionPrice, string stayForADayPrice, string stayPerHourPrice, string name)
+        {
+            repositoryInstance.UpdateLargeParkings(parkingSpaces, monthlySubscriptionPrice, stayForADayPrice, stayPerHourPrice, name);
+        }
+
+        public void UpdateChargingStations(string capacity, string workingHours, string chargerName)
+        {
+            repositoryInstance.UpdateChargingStations(capacity, workingHours, chargerName);
+        }
     }
 }

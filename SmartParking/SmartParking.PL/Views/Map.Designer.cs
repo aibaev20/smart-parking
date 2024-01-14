@@ -34,21 +34,21 @@ namespace SmartParking.PL.Views
         {
             this.burgasGMapControl = new GMap.NET.WindowsForms.GMapControl();
             this.infoContainer = new System.Windows.Forms.Panel();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.column4Label = new System.Windows.Forms.Label();
+            this.column3Label = new System.Windows.Forms.Label();
+            this.column2Label = new System.Windows.Forms.Label();
+            this.column1Label = new System.Windows.Forms.Label();
             this.longitudeLabel = new System.Windows.Forms.Label();
             this.latitudeLabel = new System.Windows.Forms.Label();
             this.latitude = new System.Windows.Forms.Label();
             this.longitude = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
-            this.column1Label = new System.Windows.Forms.Label();
-            this.column2Label = new System.Windows.Forms.Label();
-            this.column3Label = new System.Windows.Forms.Label();
-            this.column4Label = new System.Windows.Forms.Label();
-            this.column1 = new System.Windows.Forms.Label();
-            this.column2 = new System.Windows.Forms.Label();
-            this.column3 = new System.Windows.Forms.Label();
-            this.column4 = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.column1TextBox = new System.Windows.Forms.TextBox();
+            this.column2TextBox = new System.Windows.Forms.TextBox();
+            this.column3TextBox = new System.Windows.Forms.TextBox();
+            this.column4TextBox = new System.Windows.Forms.TextBox();
             this.infoContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,16 +80,17 @@ namespace SmartParking.PL.Views
             this.burgasGMapControl.TabIndex = 0;
             this.burgasGMapControl.Zoom = 0D;
             this.burgasGMapControl.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.burgasGMapControl_OnMarkerClick);
+            this.burgasGMapControl.Load += new System.EventHandler(this.burgasGMapControl_Load);
             // 
             // infoContainer
             // 
             this.infoContainer.BackColor = System.Drawing.Color.LightSlateGray;
+            this.infoContainer.Controls.Add(this.column4TextBox);
+            this.infoContainer.Controls.Add(this.column3TextBox);
+            this.infoContainer.Controls.Add(this.column2TextBox);
+            this.infoContainer.Controls.Add(this.column1TextBox);
             this.infoContainer.Controls.Add(this.updateButton);
             this.infoContainer.Controls.Add(this.exitButton);
-            this.infoContainer.Controls.Add(this.column4);
-            this.infoContainer.Controls.Add(this.column3);
-            this.infoContainer.Controls.Add(this.column2);
-            this.infoContainer.Controls.Add(this.column1);
             this.infoContainer.Controls.Add(this.column4Label);
             this.infoContainer.Controls.Add(this.column3Label);
             this.infoContainer.Controls.Add(this.column2Label);
@@ -105,6 +106,84 @@ namespace SmartParking.PL.Views
             this.infoContainer.Size = new System.Drawing.Size(413, 649);
             this.infoContainer.TabIndex = 1;
             this.infoContainer.Visible = false;
+            // 
+            // updateButton
+            // 
+            this.updateButton.BackColor = System.Drawing.Color.DarkGreen;
+            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
+            this.updateButton.ForeColor = System.Drawing.Color.White;
+            this.updateButton.Location = new System.Drawing.Point(34, 24);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(271, 58);
+            this.updateButton.TabIndex = 17;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseCompatibleTextRendering = true;
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.DarkRed;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Location = new System.Drawing.Point(331, 24);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(59, 58);
+            this.exitButton.TabIndex = 16;
+            this.exitButton.Text = "X";
+            this.exitButton.UseCompatibleTextRendering = true;
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // column4Label
+            // 
+            this.column4Label.AutoSize = true;
+            this.column4Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
+            this.column4Label.ForeColor = System.Drawing.Color.White;
+            this.column4Label.Location = new System.Drawing.Point(34, 650);
+            this.column4Label.MaximumSize = new System.Drawing.Size(130, 0);
+            this.column4Label.Name = "column4Label";
+            this.column4Label.Size = new System.Drawing.Size(50, 28);
+            this.column4Label.TabIndex = 11;
+            this.column4Label.Text = "Info:";
+            // 
+            // column3Label
+            // 
+            this.column3Label.AutoSize = true;
+            this.column3Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
+            this.column3Label.ForeColor = System.Drawing.Color.White;
+            this.column3Label.Location = new System.Drawing.Point(34, 569);
+            this.column3Label.MaximumSize = new System.Drawing.Size(130, 0);
+            this.column3Label.Name = "column3Label";
+            this.column3Label.Size = new System.Drawing.Size(50, 28);
+            this.column3Label.TabIndex = 10;
+            this.column3Label.Text = "Info:";
+            // 
+            // column2Label
+            // 
+            this.column2Label.AutoSize = true;
+            this.column2Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
+            this.column2Label.ForeColor = System.Drawing.Color.White;
+            this.column2Label.Location = new System.Drawing.Point(34, 488);
+            this.column2Label.MaximumSize = new System.Drawing.Size(130, 0);
+            this.column2Label.Name = "column2Label";
+            this.column2Label.Size = new System.Drawing.Size(50, 28);
+            this.column2Label.TabIndex = 9;
+            this.column2Label.Text = "Info:";
+            // 
+            // column1Label
+            // 
+            this.column1Label.AutoSize = true;
+            this.column1Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
+            this.column1Label.ForeColor = System.Drawing.Color.White;
+            this.column1Label.Location = new System.Drawing.Point(34, 407);
+            this.column1Label.MaximumSize = new System.Drawing.Size(130, 0);
+            this.column1Label.Name = "column1Label";
+            this.column1Label.Size = new System.Drawing.Size(50, 28);
+            this.column1Label.TabIndex = 8;
+            this.column1Label.Text = "Info:";
             // 
             // longitudeLabel
             // 
@@ -162,126 +241,46 @@ namespace SmartParking.PL.Views
             this.name.TabIndex = 0;
             this.name.Text = "name";
             // 
-            // column1Label
+            // column1TextBox
             // 
-            this.column1Label.AutoSize = true;
-            this.column1Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column1Label.ForeColor = System.Drawing.Color.White;
-            this.column1Label.Location = new System.Drawing.Point(34, 407);
-            this.column1Label.MaximumSize = new System.Drawing.Size(130, 0);
-            this.column1Label.Name = "column1Label";
-            this.column1Label.Size = new System.Drawing.Size(50, 28);
-            this.column1Label.TabIndex = 8;
-            this.column1Label.Text = "Info:";
+            this.column1TextBox.Enabled = false;
+            this.column1TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.column1TextBox.Location = new System.Drawing.Point(175, 407);
+            this.column1TextBox.Multiline = true;
+            this.column1TextBox.Name = "column1TextBox";
+            this.column1TextBox.Size = new System.Drawing.Size(100, 26);
+            this.column1TextBox.TabIndex = 18;
+            this.column1TextBox.Text = "Column 1";
             // 
-            // column2Label
+            // column2TextBox
             // 
-            this.column2Label.AutoSize = true;
-            this.column2Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column2Label.ForeColor = System.Drawing.Color.White;
-            this.column2Label.Location = new System.Drawing.Point(34, 488);
-            this.column2Label.MaximumSize = new System.Drawing.Size(130, 0);
-            this.column2Label.Name = "column2Label";
-            this.column2Label.Size = new System.Drawing.Size(50, 28);
-            this.column2Label.TabIndex = 9;
-            this.column2Label.Text = "Info:";
+            this.column2TextBox.Enabled = false;
+            this.column2TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.column2TextBox.Location = new System.Drawing.Point(175, 488);
+            this.column2TextBox.Name = "column2TextBox";
+            this.column2TextBox.Size = new System.Drawing.Size(100, 34);
+            this.column2TextBox.TabIndex = 19;
+            this.column2TextBox.Text = "Column 2";
             // 
-            // column3Label
+            // column3TextBox
             // 
-            this.column3Label.AutoSize = true;
-            this.column3Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column3Label.ForeColor = System.Drawing.Color.White;
-            this.column3Label.Location = new System.Drawing.Point(34, 569);
-            this.column3Label.MaximumSize = new System.Drawing.Size(130, 0);
-            this.column3Label.Name = "column3Label";
-            this.column3Label.Size = new System.Drawing.Size(50, 28);
-            this.column3Label.TabIndex = 10;
-            this.column3Label.Text = "Info:";
+            this.column3TextBox.Enabled = false;
+            this.column3TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.column3TextBox.Location = new System.Drawing.Point(175, 569);
+            this.column3TextBox.Name = "column3TextBox";
+            this.column3TextBox.Size = new System.Drawing.Size(100, 34);
+            this.column3TextBox.TabIndex = 20;
+            this.column3TextBox.Text = "Column 3";
             // 
-            // column4Label
+            // column4TextBox
             // 
-            this.column4Label.AutoSize = true;
-            this.column4Label.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column4Label.ForeColor = System.Drawing.Color.White;
-            this.column4Label.Location = new System.Drawing.Point(34, 650);
-            this.column4Label.MaximumSize = new System.Drawing.Size(130, 0);
-            this.column4Label.Name = "column4Label";
-            this.column4Label.Size = new System.Drawing.Size(50, 28);
-            this.column4Label.TabIndex = 11;
-            this.column4Label.Text = "Info:";
-            // 
-            // column1
-            // 
-            this.column1.AutoSize = true;
-            this.column1.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column1.ForeColor = System.Drawing.Color.White;
-            this.column1.Location = new System.Drawing.Point(175, 407);
-            this.column1.Name = "column1";
-            this.column1.Size = new System.Drawing.Size(93, 28);
-            this.column1.TabIndex = 12;
-            this.column1.Text = "column 1";
-            // 
-            // column2
-            // 
-            this.column2.AutoSize = true;
-            this.column2.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column2.ForeColor = System.Drawing.Color.White;
-            this.column2.Location = new System.Drawing.Point(175, 488);
-            this.column2.Name = "column2";
-            this.column2.Size = new System.Drawing.Size(93, 28);
-            this.column2.TabIndex = 13;
-            this.column2.Text = "column 2";
-            // 
-            // column3
-            // 
-            this.column3.AutoSize = true;
-            this.column3.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column3.ForeColor = System.Drawing.Color.White;
-            this.column3.Location = new System.Drawing.Point(175, 569);
-            this.column3.Name = "column3";
-            this.column3.Size = new System.Drawing.Size(93, 28);
-            this.column3.TabIndex = 14;
-            this.column3.Text = "column 3";
-            // 
-            // column4
-            // 
-            this.column4.AutoSize = true;
-            this.column4.Font = new System.Drawing.Font("Nirmala UI", 10F);
-            this.column4.ForeColor = System.Drawing.Color.White;
-            this.column4.Location = new System.Drawing.Point(175, 650);
-            this.column4.Name = "column4";
-            this.column4.Size = new System.Drawing.Size(93, 28);
-            this.column4.TabIndex = 15;
-            this.column4.Text = "column 4";
-            // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.DarkRed;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(331, 24);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(59, 58);
-            this.exitButton.TabIndex = 16;
-            this.exitButton.Text = "X";
-            this.exitButton.UseCompatibleTextRendering = true;
-            this.exitButton.UseVisualStyleBackColor = false;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // updateButton
-            // 
-            this.updateButton.BackColor = System.Drawing.Color.DarkGreen;
-            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
-            this.updateButton.ForeColor = System.Drawing.Color.White;
-            this.updateButton.Location = new System.Drawing.Point(34, 24);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(271, 58);
-            this.updateButton.TabIndex = 17;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseCompatibleTextRendering = true;
-            this.updateButton.UseVisualStyleBackColor = false;
+            this.column4TextBox.Enabled = false;
+            this.column4TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.column4TextBox.Location = new System.Drawing.Point(175, 650);
+            this.column4TextBox.Name = "column4TextBox";
+            this.column4TextBox.Size = new System.Drawing.Size(100, 34);
+            this.column4TextBox.TabIndex = 21;
+            this.column4TextBox.Text = "Column 4";
             // 
             // Map
             // 
@@ -309,16 +308,16 @@ namespace SmartParking.PL.Views
         private Label latitude;
         private Label latitudeLabel;
         private Label longitudeLabel;
-        private Label column4;
-        private Label column3;
-        private Label column2;
-        private Label column1;
         private Label column4Label;
         private Label column3Label;
         private Label column2Label;
         private Label column1Label;
         private Button updateButton;
         private Button exitButton;
+        private TextBox column1TextBox;
+        private TextBox column4TextBox;
+        private TextBox column3TextBox;
+        private TextBox column2TextBox;
     }
 }
 

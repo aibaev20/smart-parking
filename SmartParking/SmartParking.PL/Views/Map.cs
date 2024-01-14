@@ -13,7 +13,6 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsPresentation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Drawing;
 using SmartParking.PL.Controllers;
 
 
@@ -26,6 +25,7 @@ namespace SmartParking.PL.Views
         public static bool isAdmin;
         private static Map instance;
         private GMapOverlay markersOverlay;
+        private int markerId = 0;
 
         public static Map GetInstance(string username)
         {
@@ -474,9 +474,7 @@ namespace SmartParking.PL.Views
         {
             infoContainer.Visible = true;
 
-            Console.WriteLine(item.Tag.ToString());
-
-            int markerId = int.Parse(item.Tag.ToString());
+            markerId = int.Parse(item.Tag.ToString());
 
             name.Text = markerController.GetNameById(markerId);
             latitude.Text = markerController.GetLatitudeById(markerId).ToString();
@@ -485,72 +483,126 @@ namespace SmartParking.PL.Views
             if (markerId >= 1 && markerId <= 2)
             {
                 column1Label.Text = "Parking spaces:";
-                column1.Text = markerController.GetParkingSpacesById(markerId).ToString();
+                column1TextBox.Text = markerController.GetParkingSpacesById(markerId).ToString();
+
                 column2Label.Text = "Monthly subscription:";
-                column2.Text = markerController.GetMonthlySubscriptionPriceById(markerId);
+                column2TextBox.Text = markerController.GetMonthlySubscriptionPriceById(markerId);
+
                 column3Label.Text = "Stay for a day:";
-                column3.Text = markerController.GetStayForADayPriceById(markerId);
+                column3TextBox.Text = markerController.GetStayForADayPriceById(markerId);
+
                 column4Label.Text = "Stay per hour:";
-                column4.Text = markerController.GetStayPerHourPriceById(markerId);
+                column4TextBox.Text = markerController.GetStayPerHourPriceById(markerId);
+
+                column1TextBox.Size = new Size(100, 34);
 
                 column2Label.Location = new Point(22, 325);
-                column2.Location = new Point(115, 325);
+                column2TextBox.Location = new Point(117, 325);
+                column2TextBox.Size = new Size(100, 30);
 
                 column1Label.Visible = true;
-                column1.Visible = true;
+                column1TextBox.Visible = true;
+
                 column2Label.Visible = true;
-                column2.Visible = true;
+                column2TextBox.Visible = true;
+
                 column3Label.Visible = true;
-                column3.Visible = true;
+                column3TextBox.Visible = true;
+
                 column4Label.Visible = true;
-                column4.Visible = true;
+                column4TextBox.Visible = true;
             }
-            else if (markerId >= 3 && markerId <= 40)
+            if (markerId >= 3 && markerId <= 40)
             {
                 column1Label.Text = "Capacity:";
-                column1.Text = markerController.GetCapacityById(markerId);
-                column1.MaximumSize = new Size(130, 0);
+                column1TextBox.Text = markerController.GetCapacityById(markerId);
+                
+                column1TextBox.Size = new Size(140, 110);
+
                 column2Label.Text = "Working hours:";
                 column2Label.Location = new Point(22, 420);
-                column2.Text = markerController.GetChargerWorkingHoursById(markerId);
-                column2.Location = new Point(115, 420);
+                column2TextBox.Text = markerController.GetChargerWorkingHoursById(markerId);
+                column2TextBox.Location = new Point(117, 420);
 
                 column1Label.Visible = true;
-                column1.Visible = true;
+                column1TextBox.Visible = true;
+
                 column2Label.Visible = true;
-                column2.Visible = true;
+                column2TextBox.Visible = true;
+
                 column3Label.Visible = false;
-                column3.Visible = false;
+                column3TextBox.Visible = false;
+
                 column4Label.Visible = false;
-                column4.Visible = false;
+                column4TextBox.Visible = false;
             }
 
-            else if (markerId >= 41 && markerId <= 65)
+            if (markerId >= 41 && markerId <= 65)
             {
                 column1Label.Visible = false;
-                column1.Visible = false;
+                column1TextBox.Visible = false;
+
                 column2Label.Visible = false;
-                column2.Visible = false;
+                column2TextBox.Visible = false;
+
                 column3Label.Visible = false;
-                column3.Visible = false;
+                column3TextBox.Visible = false;
+
                 column4Label.Visible = false;
-                column4.Visible = false;
+                column4TextBox.Visible = false;
             }
 
-            else
-            {
-                column2Label.Location = new Point(22, 488);
-                column2.Location = new Point(115, 488);
-                column3Label.Visible = true;
-                column3.Visible = true;
-                column4Label.Visible = true;
-                column4.Visible = true;
-            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             infoContainer.Hide();
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            MarkerController markerController = MarkerController.GetInstance();
+
+
+            switch (markerId)
+            {
+                case 1:
+                case 2:
+                    string parkingSpaces = column1TextBox.Text.ToString();
+                    string monthlySubscriptionPrice = column2TextBox.Text;
+                    string stayForADayPrice = column3TextBox.Text;
+                    string stayPerHourPrice = column4TextBox.Text;
+                    string name = markerController.GetNameById(markerId);
+
+                    markerController.UpdateLargeParkings(parkingSpaces, monthlySubscriptionPrice, stayForADayPrice, stayPerHourPrice, name);
+                    break;
+
+                case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12:
+                case 13: case 14: case 15: case 16: case 17: case 18: case 19: case 20: case 21:
+                case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30:
+                case 31: case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39:
+                case 40:
+
+                    string capacity = column1TextBox.Text;
+                    string workingHours = column2TextBox.Text;
+                    string chargerName = markerController.GetNameById(markerId);
+                    markerController.UpdateChargingStations(capacity, workingHours, chargerName);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void burgasGMapControl_Load(object sender, EventArgs e)
+        {
+            if (isAdmin == true)
+            {
+                column1TextBox.Enabled = true;
+                column2TextBox.Enabled = true;
+                column3TextBox.Enabled = true;
+                column4TextBox.Enabled = true;
+            }
         }
     }
 }

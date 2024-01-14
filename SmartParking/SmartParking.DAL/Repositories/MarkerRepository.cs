@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 using SmartParking.DAL.Data;
+using SmartParking.DAL.Models;
 
 namespace SmartParking.DAL.Repositories
 {
@@ -189,6 +190,53 @@ namespace SmartParking.DAL.Repositories
             connection.Close();
 
             return result;
+        }
+
+        public void UpdateLargeParkings(string parkingSpaces, string monthlySubscriptionPrice, string stayForADayPrice, string stayPerHourPrice, string name)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "UPDATE [lp] SET [lp].[ParkingSpaces] = @ParkingSpaces," +
+                "[lp].[MonthlySubscriptionPrice] = @MonthlySubscriptionPrice," +
+                "[lp].[StayForADayPrice] = @StayForADayPrice," +
+                "[lp].[StayPerHourPrice] = @StayPerHourPrice FROM [LargeParkings] AS [lp]" +
+                "JOIN [Informations] AS [i] ON [lp].[InformationsId] = [i].[Id] WHERE [i].[Name] = @Name;";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@ParkingSpaces", parkingSpaces);
+            command.Parameters.AddWithValue("@MonthlySubscriptionPrice", monthlySubscriptionPrice);
+            command.Parameters.AddWithValue("@StayForADayPrice", stayForADayPrice);
+            command.Parameters.AddWithValue("@StayPerHourPrice", stayPerHourPrice);
+            command.Parameters.AddWithValue("@Name", name);
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public void UpdateChargingStations(string capacity, string workingHours, string chargerName)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "UPDATE [cs] SET [cs].[Capacity] = @Capacity," +
+                "[cs].[WorkingHours] = @WorkingHours FROM [ChargingStations] AS [cs]" +
+                "JOIN [Informations] AS [i] ON [cs].[InformationsId] = [i].[Id]" +
+                "WHERE [i].[Name] = @Name;";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Capacity", capacity);
+            command.Parameters.AddWithValue("@WorkingHours", workingHours);
+            command.Parameters.AddWithValue("@Name", chargerName);
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
         }
     }
 }

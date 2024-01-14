@@ -71,5 +71,15 @@ namespace SmartParking.PL.Controllers
         {
             return serviceInstance.GetChargerWorkingHoursById(id);
         }
+
+        public void UpdateLargeParkings(string parkingSpaces, string monthlySubscriptionPrice, string stayForADayPrice, string stayPerHourPrice, string name)
+        {
+            serviceInstance.UpdateLargeParkings(parkingSpaces, monthlySubscriptionPrice, stayForADayPrice, stayPerHourPrice, name);
+        }
+
+        public void UpdateChargingStations(string capacity, string workingHours, string chargerName)
+        {
+            serviceInstance.UpdateChargingStations(capacity, workingHours, chargerName);
+        }
     }
 }

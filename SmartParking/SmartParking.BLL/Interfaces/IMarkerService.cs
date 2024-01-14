@@ -23,5 +23,9 @@ namespace SmartParking.BLL.Interfaces
         string GetCapacityById(int id);
 
         string GetChargerWorkingHoursById(int id);
+
+        void UpdateLargeParkings(string parkingSpaces, string monthlySubscriptionPrice, string stayForADayPrice, string stayPerHourPrice, string name);
+
+        void UpdateChargingStations(string capacity, string workingHours, string chargerName);
     }
 }
