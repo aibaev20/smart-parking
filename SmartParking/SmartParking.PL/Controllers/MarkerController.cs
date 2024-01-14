@@ -36,5 +36,40 @@ namespace SmartParking.PL.Controllers
         {
             return serviceInstance.GetLongitudeById(id);
         }
+
+        public string GetNameById(int id)
+        {
+            return serviceInstance.GetNameById(id);
+        }
+
+        public int GetParkingSpacesById(int id)
+        {
+            return serviceInstance.GetParkingSpacesById(id);
+        }
+
+        public string GetMonthlySubscriptionPriceById(int id)
+        {
+            return serviceInstance.GetMonthlySubscriptionPriceById(id);
+        }
+
+        public string GetStayForADayPriceById(int id)
+        {
+            return serviceInstance.GetStayForADayPriceById(id);
+        }
+
+        public string GetStayPerHourPriceById(int id)
+        {
+            return serviceInstance.GetStayPerHourPriceById(id);
+        }
+
+        public string GetCapacityById(int id)
+        {
+            return serviceInstance.GetCapacityById(id);
+        }
+
+        public string GetChargerWorkingHoursById(int id)
+        {
+            return serviceInstance.GetChargerWorkingHoursById(id);
+        }
     }
 }

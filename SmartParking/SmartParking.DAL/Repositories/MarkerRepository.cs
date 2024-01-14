@@ -57,5 +57,138 @@ namespace SmartParking.DAL.Repositories
 
             return result;
         }
+
+        public string GetNameById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [Name] FROM [Informations] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            string result = (string)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public int GetParkingSpacesById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [ParkingSpaces] FROM [LargeParkings] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            int result = (int)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public string GetMonthlySubscriptionPriceById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [MonthlySubscriptionPrice] FROM [LargeParkings] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            string result = (string)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public string GetStayForADayPriceById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [StayForADayPrice] FROM [LargeParkings] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            string result = (string)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public string GetStayPerHourPriceById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [StayPerHourPrice] FROM [LargeParkings] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            string result = (string)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public string GetCapacityById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [Capacity] FROM [ChargingStations] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            string result = (string)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public string GetChargerWorkingHoursById(int id)
+        {
+            SqlConnection connection = DBConnection.GetInstance();
+
+            string commandString = "SELECT [WorkingHours] FROM [ChargingStations] WHERE [Id] = @Id";
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            string result = (string)command.ExecuteScalar();
+
+            connection.Close();
+
+            return result;
+        }
     }
 }

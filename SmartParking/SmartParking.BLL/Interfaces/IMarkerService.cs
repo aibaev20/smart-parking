@@ -9,5 +9,19 @@ namespace SmartParking.BLL.Interfaces
         double GetLatitudeById(int id);
 
         double GetLongitudeById(int id);
+
+        string GetNameById(int id);
+
+        int GetParkingSpacesById(int id);
+
+        string GetMonthlySubscriptionPriceById(int id);
+
+        string GetStayForADayPriceById(int id);
+
+        string GetStayPerHourPriceById(int id);
+
+        string GetCapacityById(int id);
+
+        string GetChargerWorkingHoursById(int id);
     }
 }
