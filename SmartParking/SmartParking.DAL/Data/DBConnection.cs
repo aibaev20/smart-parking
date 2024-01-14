@@ -14,7 +14,7 @@ namespace SmartParking.DAL.Data
         public static SqlConnection GetInstance()
         {
             string connectionString = @"Server = localhost\SQLEXPRESS;
-                Database = SmartParking;
+                Database = SmartParkingManagement;
                 Trusted_Connection=true;
                 Integrated Security=true;
                 TrustServerCertificate=true";

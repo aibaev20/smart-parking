@@ -1,5 +1,6 @@
 ﻿using SmartParking.DAL.Repositories;
 using SmartParking.DAL.Models;
+using SmartParking.BLL.Interfaces;
 using System.Collections.Generic;
 
 namespace SmartParking.BLL.Services

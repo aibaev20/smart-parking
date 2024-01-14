@@ -1,6 +1,6 @@
-CREATE DATABASE SmartParking
+CREATE DATABASE SmartParkingManagement
 
-USE SmartParking
+USE SmartParkingManagement
 
 CREATE TABLE Accounts
 (
@@ -15,8 +15,8 @@ CREATE TABLE Informations
 (
 	Id INT PRIMARY KEY,
 	[Name] VARCHAR(50),
-	Latitude VARCHAR(20),
-	Longitude VARCHAR(20)
+	Latitude FLOAT,
+	Longitude FLOAT
 );
 
 CREATE TABLE LargeParkings
@@ -51,71 +51,71 @@ INSERT INTO Accounts (Username, Email, [Password], [Role])
 VALUES ('ObshtinaBurgas', 'obshtina@burgas.bg', '1234', 'Admin');
 
 INSERT INTO Informations (Id, [Name], Latitude, Longitude)
-VALUES (1, 'Parking Gurko', '42.50050', '27.47595'),
-	(2, 'Parking Opera', '42.494393', '27.469998'),
-	(3, 'Megalan Charge Euroservice', '42.447691', '27.394357'),
-	(4, 'Eldrive Mr. Bricolage Burgas', '42.471860', '27.432060'),
-	(5, 'Fines Charging Honda Apostolov', '42.49097270030741', '27.448147543434217'),
-	(6, 'ElDrive Borisova garden', '42.496047', '27.465731'),
-	(7, 'Eldrive Parking Gurko Burgas', '42.500422', '27.474917'),
-	(8, 'ElDrive Lazur', '42.503320', '27.479067'),
-	(9, 'ElDrive Rhodopes', '42.504754', '27.467409'),
-	(10, 'Megalan Charge Business zone Apollo', '42.510495', '27.450155'),
-	(11, 'ElDrive Sports complex Boycho Branzov', '42.515511', '27.467118'),
-	(12, 'Fines Charging WestAuto-M Audi', '42.516986', '27.429531'),
-	(13, 'Fines Charging Masterhaus Burgas', '42.519431', '27.437143'),
-	(14, 'Eldrive OMV Burgas Izgrev', '42.528384', '27.452319'),
-	(15, 'Eldrive Gazprom Burgas', '42.528831', '27.454900'),
-	(16, 'Eldrive Mall Plaza', '42.530885', '27.458653'),
-	(17, 'Kaufland Burgas', '42.531675', '27.461105'),
-	(18, 'Fines Charging Moto Pfohe Burgas', '42.534165', '27.447438'),
-	(19, 'Fines Charging Hyandai Burgas', '42.540733', '27.440936'),
-	(20, 'KIA Hypercharge Autocenter Burgas', '42.473685', '27.439787'),
-	(21, 'AutoBOX Burgas', '42.472870', '27.442079'),
-	(22, 'ElDrive Blvd. Zheni Pateva', '42.491822', '27.469173'),
-	(23, 'Grand Hotel and SPA Primorets', '42.491203', '27.479786'),
-	(24, 'EVPoint Marine Station Burgas', '42.485562', '27.482577'),
-	(25, 'ElDrive Red Cross Burgas', '42.500479', '27.461614'),
-	(26, 'Hotel Opera', '42.498750', '27.466609'),
-	(27, 'ElDrive DZI Burgas', '42.498614', '27.471907'),
-	(28, 'ElDrive Sea Garden Burgas', '42.507032', '27.482002'),
-	(29, 'eCars Park Arena Burgas', '42.512896', '27.458273'),
-	(30, 'Hotel Aqua Burgas', '42.511020', '27.467292'),
-	(31, 'EVPoint Burgas Residences', '42.513734', '27.471254'),
-	(32, 'EVPoint Moto Uni - Mazda', '42.521663', '27.441459'),
-	(33, 'EVPoint Westauto-M Volkswagen', '42.524651', '27.444687'),
-	(34, 'Eldrive Metro Burgas', '42.529406', '27.452710'),
-	(35, 'ElDrive Hotel Avenue', '42.529079', '27.453730'),
-	(36, 'ElDrive Smart Business Center', '42.531588', '27.464406'),
-	(37, 'EVPoint Sofia France Auto Retail', '42.532036', '27.467672'),
-	(38, 'AutoBOX CBA Bolero', '42.528531', '27.462925'),
-	(39, 'Eldrive Moto Pfohe Burgas', '42.534124', '27.447238'),
-	(40, 'eCars Hyundai Burgas', '42.540392', '27.441232'),
-	(41, 'Parking space for disabled people', '42.50187', '27.47687'),
-	(42, 'Parking space for disabled people', '42.50282', '27.47722'),
-	(43, 'Parking space for disabled people', '42.50284', '27.47718'),
-	(44, 'Parking space for disabled people', '42.50310', '27.47640'),
-	(45, 'Parking space for disabled people', '42.50312', '27.47636'),
-	(46, 'Parking space for disabled people', '42.50348', '27.47652'),
-	(47, 'Parking space for disabled people', '42.50350', '27.47650'),
-	(48, 'Parking space for disabled people', '42.50393', '27.47643'),
-	(49, 'Parking space for disabled people', '42.50396', '27.47648'),
-	(50, 'Parking space for disabled people', '42.50307', '27.47796'),
-	(51, 'Parking space for disabled people', '42.50359', '27.47933'),
-	(52, 'Parking space for disabled people', '42.50361', '27.47928'),
-	(53, 'Parking space for disabled people', '42.50378', '27.48062'),
-	(54, 'Parking space for disabled people', '42.50381', '27.48062'),
-	(55, 'Parking space for disabled people', '42.50390', '27.48061'),
-	(56, 'Parking space for disabled people', '42.50392', '27.48061'),
-	(57, 'Parking space for disabled people', '42.50415', '27.47988'),
-	(58, 'Parking space for disabled people', '42.50418', '27.47987'),
-	(59, 'Parking space for disabled people', '42.50425', '27.48051'),
-	(60, 'Parking space for disabled people', '42.50429', '27.48050'),
-	(61, 'Parking space for disabled people', '42.50471', '27.47934'),
-	(62, 'Parking space for disabled people', '42.50526', '27.47980'),
-	(63, 'Parking space for disabled people', '42.50557', '27.47922'),
-	(64, 'Parking space for disabled people', '42.50505', '27.47796'),
-	(65, 'Parking space for disabled people', '42.50508', '27.47793')
+VALUES (1, 'Parking Gurko', 42.50050, 27.47595),
+	(2, 'Parking Opera', 42.494393, 27.469998),
+	(3, 'Megalan Charge Euroservice', 42.447691, 27.394357),
+	(4, 'Eldrive Mr. Bricolage Burgas', 42.471860, 27.432060),
+	(5, 'Fines Charging Honda Apostolov', 42.49097270030741, 27.448147543434217),
+	(6, 'ElDrive Borisova garden', 42.496047, 27.465731),
+	(7, 'Eldrive Parking Gurko Burgas', 42.500422, 27.474917),
+	(8, 'ElDrive Lazur', 42.503320, 27.479067),
+	(9, 'ElDrive Rhodopes', 42.504754, 27.467409),
+	(10, 'Megalan Charge Business zone Apollo', 42.510495, 27.450155),
+	(11, 'ElDrive Sports complex Boycho Branzov', 42.515511, 27.467118),
+	(12, 'Fines Charging WestAuto-M Audi', 42.516986, 27.429531),
+	(13, 'Fines Charging Masterhaus Burgas', 42.519431, 27.437143),
+	(14, 'Eldrive OMV Burgas Izgrev', 42.528384, 27.452319),
+	(15, 'Eldrive Gazprom Burgas', 42.528831, 27.454900),
+	(16, 'Eldrive Mall Plaza', 42.530885, 27.458653),
+	(17, 'Kaufland Burgas', 42.531675, 27.461105),
+	(18, 'Fines Charging Moto Pfohe Burgas', 42.534165, 27.447438),
+	(19, 'Fines Charging Hyandai Burgas', 42.540733, 27.440936),
+	(20, 'KIA Hypercharge Autocenter Burgas', 42.473685, 27.439787),
+	(21, 'AutoBOX Burgas', 42.472870, 27.442079),
+	(22, 'ElDrive Blvd. Zheni Pateva', 42.491822, 27.469173),
+	(23, 'Grand Hotel and SPA Primorets', 42.491203, 27.479786),
+	(24, 'EVPoint Marine Station Burgas', 42.485562, 27.482577),
+	(25, 'ElDrive Red Cross Burgas', 42.500479, 27.461614),
+	(26, 'Hotel Opera', 42.498750, 27.466609),
+	(27, 'ElDrive DZI Burgas', 42.498614, 27.471907),
+	(28, 'ElDrive Sea Garden Burgas', 42.507032, 27.482002),
+	(29, 'eCars Park Arena Burgas', 42.512896, 27.458273),
+	(30, 'Hotel Aqua Burgas', 42.511020, 27.467292),
+	(31, 'EVPoint Burgas Residences', 42.513734, 27.471254),
+	(32, 'EVPoint Moto Uni - Mazda', 42.521663, 27.441459),
+	(33, 'EVPoint Westauto-M Volkswagen', 42.524651, 27.444687),
+	(34, 'Eldrive Metro Burgas', 42.529406, 27.452710),
+	(35, 'ElDrive Hotel Avenue', 42.529079, 27.453730),
+	(36, 'ElDrive Smart Business Center', 42.531588, 27.464406),
+	(37, 'EVPoint Sofia France Auto Retail', 42.532036, 27.467672),
+	(38, 'AutoBOX CBA Bolero', 42.528531, 27.462925),
+	(39, 'Eldrive Moto Pfohe Burgas', 42.534124, 27.447238),
+	(40, 'eCars Hyundai Burgas', 42.540392, 27.441232),
+	(41, 'Parking space for disabled people', 42.50187, 27.47687),
+	(42, 'Parking space for disabled people', 42.50282, 27.47722),
+	(43, 'Parking space for disabled people', 42.50284, 27.47718),
+	(44, 'Parking space for disabled people', 42.50310, 27.47640),
+	(45, 'Parking space for disabled people', 42.50312, 27.47636),
+	(46, 'Parking space for disabled people', 42.50348, 27.47652),
+	(47, 'Parking space for disabled people', 42.50350, 27.47650),
+	(48, 'Parking space for disabled people', 42.50393, 27.47643),
+	(49, 'Parking space for disabled people', 42.50396, 27.47648),
+	(50, 'Parking space for disabled people', 42.50307, 27.47796),
+	(51, 'Parking space for disabled people', 42.50359, 27.47933),
+	(52, 'Parking space for disabled people', 42.50361, 27.47928),
+	(53, 'Parking space for disabled people', 42.50378, 27.48062),
+	(54, 'Parking space for disabled people', 42.50381, 27.48062),
+	(55, 'Parking space for disabled people', 42.50390, 27.48061),
+	(56, 'Parking space for disabled people', 42.50392, 27.48061),
+	(57, 'Parking space for disabled people', 42.50415, 27.47988),
+	(58, 'Parking space for disabled people', 42.50418, 27.47987),
+	(59, 'Parking space for disabled people', 42.50425, 27.48051),
+	(60, 'Parking space for disabled people', 42.50429, 27.48050),
+	(61, 'Parking space for disabled people', 42.50471, 27.47934),
+	(62, 'Parking space for disabled people', 42.50526, 27.47980),
+	(63, 'Parking space for disabled people', 42.50557, 27.47922),
+	(64, 'Parking space for disabled people', 42.50505, 27.47796),
+	(65, 'Parking space for disabled people', 42.50508, 27.47793)
 
 
 INSERT INTO LargeParkings (Id, InformationsId, ParkingSpaces, MonthlySubscriptionPrice, StayForADayPrice, StayPerHourPrice)
@@ -166,3 +166,21 @@ INSERT INTO ParkingForDisabled (Id, InformationsId)
 VALUES (41, 41), (42, 42), (43, 43), (44, 44), (45, 45), (46, 46), (47, 47), (48, 48), (49, 49),
 		(50, 50), (51, 51), (52, 52), (53, 53), (54, 54), (55, 55), (56, 56), (57, 57), (58, 58),
 		(59, 59), (60, 60), (61, 61), (62, 62), (63, 63), (64, 64), (65, 65)
+
+SELECT * FROM Accounts
+SELECT * FROM LargeParkings
+SELECT * FROM ChargingStations
+SELECT * FROM Informations
+SELECt * FROM ParkingForDisabled
+
+DROP TABLE Accounts
+DROP TABLE Informations
+DROP TABLE LargeParkings
+DROP TABLE ChargingStations
+DROP TABLE ParkingForDisabled
+
+DELETE FROM Accounts
+DELETE FROM Informations
+DELETE FROM LargeParkings
+DELETE FROM ChargingStations
+DELETE FROM ParkingForDisabled

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SmartParking.BLL.Services
+namespace SmartParking.BLL.Interfaces
 {
     public interface IAccountService
     {
