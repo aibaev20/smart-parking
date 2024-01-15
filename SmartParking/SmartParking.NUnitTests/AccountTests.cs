@@ -4,9 +4,10 @@ using System;
 
 namespace SmartParking.NUnitTests
 {
+    // Unit tests for the AccountRepository class.
     public class AccountTests
     {
-
+        // Test for the VerifyAccount method with valid credentials.
         [Test]
         public void VerifyAccount_ValidCredentials_ReturnsTrue()
         {
@@ -22,6 +23,7 @@ namespace SmartParking.NUnitTests
             Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
 
+        // Test for the VerifyAccount method with invalid credentials.
         [Test]
         public void VerifyAccount_InvalidCredentials_ReturnsFalse()
         {
@@ -38,6 +40,7 @@ namespace SmartParking.NUnitTests
             Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
 
+        // Test for the IsAccountAlreadyRegistered method with a non-existing email.
         [Test]
         public void IsAccountAlreadyRegistered_NonExistingEmail_ReturnsFalse()
         {

@@ -20,13 +20,23 @@ namespace SmartParking.PL.Views
 {
     public partial class Map : Form
     {
+        // Single instance of AccountController and MarkerController
         private static AccountController accountController = AccountController.GetInstance();
         private static MarkerController markerController = MarkerController.GetInstance();
+
+        // Indicates whether the current user is an admin
         public static bool isAdmin;
+
+        // Single instance of Map
         private static Map instance;
+
+        // Overlay for GMap markers
         private GMapOverlay markersOverlay;
+
+        // Id of the currently selected marker
         private int markerId = 0;
 
+        // Method to get the single instance of the Map
         public static Map GetInstance(string username)
         {
             if (instance == null)
@@ -36,21 +46,28 @@ namespace SmartParking.PL.Views
             return instance;
         }
 
+        // Constructor for the Map
         public Map(string username)
         {
+            // Check if the user is an admin
             isAdmin = accountController.IsAdmin(username);
+
+            // Initialize the form components
             InitializeComponent();
+
+            // Initialize the GMapControl and add markers
             InitializeMap();
             AddMarkers();
         }
 
+        // Method to initialize the GMapControl
         private void InitializeMap()
         {
             // Set up GMapControl with OpenStreetMap provider
             burgasGMapControl.MapProvider = GMapProviders.OpenStreetMap;
+
             // Fetch map data from the server and cache it for future use
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
-            //GMaps.Instance.UseRouteCache = true;
 
             burgasGMapControl.ShowCenter = false;
 
@@ -65,11 +82,14 @@ namespace SmartParking.PL.Views
             burgasGMapControl.MaxZoom = 20;
             burgasGMapControl.Zoom = 12;
 
+            // Create a new overlay for markers
             markersOverlay = new GMapOverlay("markersOverlay");
 
+            // Add the overlay to the GMapControl
             burgasGMapControl.Overlays.Add(markersOverlay);
         }
 
+        // Method to add markers to the GMapControl
         private void AddMarkers()
         {
             Bitmap parkingLargeMarker = Properties.Resources.markerLargeParking;
@@ -467,9 +487,11 @@ namespace SmartParking.PL.Views
             parkingDisabled25.Tag = 65;
             markersOverlay.Markers.Add(parkingDisabled25);
 
+            // Refresh the GMapControl to reflect changes
             burgasGMapControl.Refresh();
         }
 
+        // Event handler for marker click
         private void burgasGMapControl_OnMarkerClick(GMap.NET.WindowsForms.GMapMarker item, MouseEventArgs e)
         {
             infoContainer.Visible = true;
@@ -483,6 +505,7 @@ namespace SmartParking.PL.Views
                 updateButton.Visible = false;
             }
 
+            // Get the marker id from the clicked marker
             markerId = int.Parse(item.Tag.ToString());
 
             name.Text = markerController.GetNameById(markerId);
@@ -548,8 +571,6 @@ namespace SmartParking.PL.Views
 
                 column4Label.Visible = false;
                 column4TextBox.Visible = false;
-
-                //updateButton.Visible = true;
             }
 
             if (markerId >= 41 && markerId <= 65)
@@ -571,11 +592,14 @@ namespace SmartParking.PL.Views
 
         }
 
+        // Event handler for exit button click in the information container
         private void exitButton_Click(object sender, EventArgs e)
         {
+            // Hide the information container
             infoContainer.Hide();
         }
 
+        // Event handler for update button click
         private void updateButton_Click(object sender, EventArgs e)
         {
             MarkerController markerController = MarkerController.GetInstance();
@@ -600,6 +624,7 @@ namespace SmartParking.PL.Views
             }
         }
 
+        // Event handler for form load
         private void burgasGMapControl_Load(object sender, EventArgs e)
         {
             if (isAdmin == true)

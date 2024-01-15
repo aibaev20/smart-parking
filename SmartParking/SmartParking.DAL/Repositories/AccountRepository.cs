@@ -9,8 +9,10 @@ namespace SmartParking.DAL.Repositories
 {
     public class AccountRepository
     {
+        // Single instance of AccountRepository
         private static AccountRepository instance = null;
 
+        // Method to get the single instance of AccountRepository
         public static AccountRepository GetInstance()
         {
             if (instance == null)
@@ -21,10 +23,12 @@ namespace SmartParking.DAL.Repositories
             return instance;
         }
 
+        // Method to verify an account based on username and password
         public bool VerifyAccount(string username, string password)
         {
             SqlConnection connection = DBConnection.GetInstance();
 
+            // SQL command to check if an account with the given username and password exists
             string commandString = "SELECT COUNT(*) FROM [Accounts] WHERE Username = @Username AND Password = @Password";
 
             connection.Open();
@@ -34,6 +38,7 @@ namespace SmartParking.DAL.Repositories
             command.Parameters.AddWithValue("@Username", username);
             command.Parameters.AddWithValue("@Password", password);
 
+            // Execute the command and get the count
             int count = (int)command.ExecuteScalar();
 
             command.ExecuteNonQuery();
@@ -43,6 +48,7 @@ namespace SmartParking.DAL.Repositories
             return count > 0;
         }
 
+        // Method to check if an account with the given email is already registered
         public bool IsAccountAlreadyRegistered(string email)
         {
             SqlConnection connection = DBConnection.GetInstance();
@@ -62,6 +68,8 @@ namespace SmartParking.DAL.Repositories
             return emailCount > 0;
         }
 
+        // Method to check if an account with the given email or username is already registered
+        // Overload method
         public bool IsAccountAlreadyRegistered(string email, string username)
         {
             SqlConnection connection = DBConnection.GetInstance();
@@ -85,6 +93,7 @@ namespace SmartParking.DAL.Repositories
             return emailCount > 0 || usernameCount > 0;
         }
 
+        // Method to check if an account has admin role
         public bool IsAdmin(string username)
         {
             SqlConnection connection = DBConnection.GetInstance();
@@ -104,6 +113,7 @@ namespace SmartParking.DAL.Repositories
             return result == "Admin";
         }
 
+        // Method to add a new account to the database
         public void AddAccount(string username, string email, string password)
         {
             SqlConnection connection = DBConnection.GetInstance();
