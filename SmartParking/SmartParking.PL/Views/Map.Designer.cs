@@ -156,6 +156,7 @@ namespace SmartParking.PL.Views
             // updateButton
             // 
             this.updateButton.BackColor = System.Drawing.Color.DarkGreen;
+            this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.Color.White;
@@ -173,6 +174,7 @@ namespace SmartParking.PL.Views
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.DarkRed;
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
             this.exitButton.ForeColor = System.Drawing.Color.White;
@@ -310,6 +312,7 @@ namespace SmartParking.PL.Views
             this.Name = "Map";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.infoContainer.ResumeLayout(false);
             this.infoContainer.PerformLayout();
             this.ResumeLayout(false);

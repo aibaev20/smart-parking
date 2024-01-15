@@ -41,12 +41,14 @@ namespace SmartParking.PL.Views
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.DarkRed;
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
             this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(599, 12);
+            this.exitButton.Location = new System.Drawing.Point(399, 8);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(59, 58);
+            this.exitButton.Size = new System.Drawing.Size(39, 39);
             this.exitButton.TabIndex = 6;
             this.exitButton.Text = "X";
             this.exitButton.UseCompatibleTextRendering = true;
@@ -57,10 +59,10 @@ namespace SmartParking.PL.Views
             // 
             this.logo.BackColor = System.Drawing.Color.White;
             this.logo.Image = global::SmartParking.PL.Properties.Resources.logo_w_white_bg;
-            this.logo.Location = new System.Drawing.Point(89, 75);
-            this.logo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logo.Location = new System.Drawing.Point(59, 50);
+            this.logo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(502, 123);
+            this.logo.Size = new System.Drawing.Size(335, 82);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 7;
             this.logo.TabStop = false;
@@ -68,12 +70,14 @@ namespace SmartParking.PL.Views
             // adminChoice
             // 
             this.adminChoice.BackColor = System.Drawing.SystemColors.Highlight;
+            this.adminChoice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminChoice.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Bold);
             this.adminChoice.ForeColor = System.Drawing.Color.White;
-            this.adminChoice.Location = new System.Drawing.Point(207, 373);
+            this.adminChoice.Location = new System.Drawing.Point(138, 249);
+            this.adminChoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adminChoice.Name = "adminChoice";
-            this.adminChoice.Size = new System.Drawing.Size(252, 100);
+            this.adminChoice.Size = new System.Drawing.Size(168, 67);
             this.adminChoice.TabIndex = 8;
             this.adminChoice.Text = "Admin";
             this.adminChoice.UseVisualStyleBackColor = false;
@@ -82,12 +86,14 @@ namespace SmartParking.PL.Views
             // userChoice
             // 
             this.userChoice.BackColor = System.Drawing.SystemColors.Highlight;
+            this.userChoice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userChoice.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Bold);
             this.userChoice.ForeColor = System.Drawing.Color.White;
-            this.userChoice.Location = new System.Drawing.Point(207, 547);
+            this.userChoice.Location = new System.Drawing.Point(138, 365);
+            this.userChoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userChoice.Name = "userChoice";
-            this.userChoice.Size = new System.Drawing.Size(252, 100);
+            this.userChoice.Size = new System.Drawing.Size(168, 67);
             this.userChoice.TabIndex = 9;
             this.userChoice.Text = "User";
             this.userChoice.UseVisualStyleBackColor = false;
@@ -97,19 +103,20 @@ namespace SmartParking.PL.Views
             // 
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Nirmala UI", 18F);
-            this.roleLabel.Location = new System.Drawing.Point(226, 260);
+            this.roleLabel.Location = new System.Drawing.Point(151, 173);
+            this.roleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(218, 48);
+            this.roleLabel.Size = new System.Drawing.Size(147, 32);
             this.roleLabel.TabIndex = 10;
             this.roleLabel.Text = "Choose Role";
             this.roleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ChooseRole
+            // RoleSelection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(671, 780);
+            this.ClientSize = new System.Drawing.Size(447, 520);
             this.Controls.Add(this.roleLabel);
             this.Controls.Add(this.userChoice);
             this.Controls.Add(this.adminChoice);
@@ -117,8 +124,8 @@ namespace SmartParking.PL.Views
             this.Controls.Add(this.exitButton);
             this.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ChooseRole";
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Name = "RoleSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Choose Role";
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();

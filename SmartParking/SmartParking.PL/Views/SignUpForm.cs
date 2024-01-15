@@ -101,5 +101,12 @@ namespace SmartParking.PL.Views
                 password.Text = "Password";
             }
         }
+
+        private void backToLoginButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = LoginForm.GetInstance();
+            loginForm.Show();
+            Hide();
+        }
     }
 }
