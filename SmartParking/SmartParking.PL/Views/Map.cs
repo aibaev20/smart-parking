@@ -474,6 +474,15 @@ namespace SmartParking.PL.Views
         {
             infoContainer.Visible = true;
 
+            if (isAdmin)
+            {
+                updateButton.Visible = true;
+            }
+            else
+            {
+                updateButton.Visible = false;
+            }
+
             markerId = int.Parse(item.Tag.ToString());
 
             name.Text = markerController.GetNameById(markerId);
@@ -512,7 +521,7 @@ namespace SmartParking.PL.Views
                 column4Label.Visible = true;
                 column4TextBox.Visible = true;
 
-                updateButton.Visible = true;
+                //updateButton.Visible = true;
             }
 
             if (markerId >= 3 && markerId <= 40)
@@ -540,7 +549,7 @@ namespace SmartParking.PL.Views
                 column4Label.Visible = false;
                 column4TextBox.Visible = false;
 
-                updateButton.Visible = true;
+                //updateButton.Visible = true;
             }
 
             if (markerId >= 41 && markerId <= 65)

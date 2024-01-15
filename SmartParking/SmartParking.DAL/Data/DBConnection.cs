@@ -13,11 +13,7 @@ namespace SmartParking.DAL.Data
 
         public static SqlConnection GetInstance()
         {
-            string connectionString = @"Server = localhost\SQLEXPRESS;
-                Database = SmartParkingManagement;
-                Trusted_Connection=true;
-                Integrated Security=true;
-                TrustServerCertificate=true";
+            string connectionString = @"Server=tcp:smart-parking-rg.database.windows.net,1433;Initial Catalog=smart-parking-database;Persist Security Info=False;User ID=aibaev20;Password=Voj82358;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             try
             {

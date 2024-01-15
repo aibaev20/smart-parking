@@ -62,7 +62,7 @@ namespace SmartParking.PL.Views
             this.burgasGMapControl.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.burgasGMapControl.LevelsKeepInMemory = 5;
             this.burgasGMapControl.Location = new System.Drawing.Point(0, 0);
-            this.burgasGMapControl.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.burgasGMapControl.Margin = new System.Windows.Forms.Padding(1);
             this.burgasGMapControl.MarkersEnabled = true;
             this.burgasGMapControl.MaxZoom = 2;
             this.burgasGMapControl.MinZoom = 2;
@@ -102,7 +102,7 @@ namespace SmartParking.PL.Views
             this.infoContainer.Controls.Add(this.name);
             this.infoContainer.Dock = System.Windows.Forms.DockStyle.Right;
             this.infoContainer.Location = new System.Drawing.Point(518, 0);
-            this.infoContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoContainer.Margin = new System.Windows.Forms.Padding(2);
             this.infoContainer.Name = "infoContainer";
             this.infoContainer.Size = new System.Drawing.Size(275, 433);
             this.infoContainer.TabIndex = 1;
@@ -113,7 +113,7 @@ namespace SmartParking.PL.Views
             this.column4TextBox.Enabled = false;
             this.column4TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.column4TextBox.Location = new System.Drawing.Point(117, 433);
-            this.column4TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.column4TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.column4TextBox.Name = "column4TextBox";
             this.column4TextBox.Size = new System.Drawing.Size(68, 25);
             this.column4TextBox.TabIndex = 21;
@@ -124,7 +124,7 @@ namespace SmartParking.PL.Views
             this.column3TextBox.Enabled = false;
             this.column3TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.column3TextBox.Location = new System.Drawing.Point(117, 379);
-            this.column3TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.column3TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.column3TextBox.Name = "column3TextBox";
             this.column3TextBox.Size = new System.Drawing.Size(68, 25);
             this.column3TextBox.TabIndex = 20;
@@ -135,7 +135,7 @@ namespace SmartParking.PL.Views
             this.column2TextBox.Enabled = false;
             this.column2TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.column2TextBox.Location = new System.Drawing.Point(117, 325);
-            this.column2TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.column2TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.column2TextBox.Name = "column2TextBox";
             this.column2TextBox.Size = new System.Drawing.Size(68, 25);
             this.column2TextBox.TabIndex = 19;
@@ -146,7 +146,7 @@ namespace SmartParking.PL.Views
             this.column1TextBox.Enabled = false;
             this.column1TextBox.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.column1TextBox.Location = new System.Drawing.Point(117, 271);
-            this.column1TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.column1TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.column1TextBox.Multiline = true;
             this.column1TextBox.Name = "column1TextBox";
             this.column1TextBox.Size = new System.Drawing.Size(68, 19);
@@ -160,13 +160,14 @@ namespace SmartParking.PL.Views
             this.updateButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.Color.White;
             this.updateButton.Location = new System.Drawing.Point(23, 16);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(2);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(181, 39);
             this.updateButton.TabIndex = 17;
             this.updateButton.Text = "Update";
             this.updateButton.UseCompatibleTextRendering = true;
             this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Visible = false;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // exitButton
@@ -176,7 +177,7 @@ namespace SmartParking.PL.Views
             this.exitButton.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Location = new System.Drawing.Point(221, 16);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(39, 39);
             this.exitButton.TabIndex = 16;
@@ -305,7 +306,7 @@ namespace SmartParking.PL.Views
             this.ClientSize = new System.Drawing.Size(793, 433);
             this.Controls.Add(this.infoContainer);
             this.Controls.Add(this.burgasGMapControl);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Map";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App";
