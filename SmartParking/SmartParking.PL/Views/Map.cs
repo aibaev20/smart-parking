@@ -494,11 +494,11 @@ namespace SmartParking.PL.Views
                 column4Label.Text = "Stay per hour:";
                 column4TextBox.Text = markerController.GetStayPerHourPriceById(markerId);
 
-                column1TextBox.Size = new Size(100, 34);
+                column1TextBox.Size = new Size(68, 30);
 
                 column2Label.Location = new Point(22, 325);
                 column2TextBox.Location = new Point(117, 325);
-                column2TextBox.Size = new Size(100, 30);
+                column2TextBox.Size = new Size(68, 30);
 
                 column1Label.Visible = true;
                 column1TextBox.Visible = true;
@@ -526,6 +526,7 @@ namespace SmartParking.PL.Views
                 column2Label.Location = new Point(22, 420);
                 column2TextBox.Text = markerController.GetChargerWorkingHoursById(markerId);
                 column2TextBox.Location = new Point(117, 420);
+                column2TextBox.Size = new Size(140, 30);
 
                 column1Label.Visible = true;
                 column1TextBox.Visible = true;
