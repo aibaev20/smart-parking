@@ -511,7 +511,10 @@ namespace SmartParking.PL.Views
 
                 column4Label.Visible = true;
                 column4TextBox.Visible = true;
+
+                updateButton.Visible = true;
             }
+
             if (markerId >= 3 && markerId <= 40)
             {
                 column1Label.Text = "Capacity:";
@@ -535,6 +538,8 @@ namespace SmartParking.PL.Views
 
                 column4Label.Visible = false;
                 column4TextBox.Visible = false;
+
+                updateButton.Visible = true;
             }
 
             if (markerId >= 41 && markerId <= 65)
@@ -550,6 +555,8 @@ namespace SmartParking.PL.Views
 
                 column4Label.Visible = false;
                 column4TextBox.Visible = false;
+
+                updateButton.Visible = false;
             }
 
         }
@@ -563,34 +570,23 @@ namespace SmartParking.PL.Views
         {
             MarkerController markerController = MarkerController.GetInstance();
 
-
-            switch (markerId)
+            if (markerId >= 1 && markerId <= 2)
             {
-                case 1:
-                case 2:
-                    string parkingSpaces = column1TextBox.Text.ToString();
-                    string monthlySubscriptionPrice = column2TextBox.Text;
-                    string stayForADayPrice = column3TextBox.Text;
-                    string stayPerHourPrice = column4TextBox.Text;
-                    string name = markerController.GetNameById(markerId);
+                string parkingSpaces = column1TextBox.Text.ToString();
+                string monthlySubscriptionPrice = column2TextBox.Text;
+                string stayForADayPrice = column3TextBox.Text;
+                string stayPerHourPrice = column4TextBox.Text;
+                string name = markerController.GetNameById(markerId);
 
-                    markerController.UpdateLargeParkings(parkingSpaces, monthlySubscriptionPrice, stayForADayPrice, stayPerHourPrice, name);
-                    break;
+                markerController.UpdateLargeParkings(parkingSpaces, monthlySubscriptionPrice, stayForADayPrice, stayPerHourPrice, name);
+            }
 
-                case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12:
-                case 13: case 14: case 15: case 16: case 17: case 18: case 19: case 20: case 21:
-                case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30:
-                case 31: case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39:
-                case 40:
-
-                    string capacity = column1TextBox.Text;
-                    string workingHours = column2TextBox.Text;
-                    string chargerName = markerController.GetNameById(markerId);
-                    markerController.UpdateChargingStations(capacity, workingHours, chargerName);
-                    break;
-
-                default:
-                    break;
+            if (markerId >= 3 && markerId <= 40)
+            {
+                string capacity = column1TextBox.Text;
+                string workingHours = column2TextBox.Text;
+                string chargerName = markerController.GetNameById(markerId);
+                markerController.UpdateChargingStations(capacity, workingHours, chargerName);
             }
         }
 

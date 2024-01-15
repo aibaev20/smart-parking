@@ -8,12 +8,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.PL", "SmartPar
 		{5A089C41-35FF-435D-999E-EDC8772F4218} = {5A089C41-35FF-435D-999E-EDC8772F4218}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.BLL", "SmartParking.BLL\SmartParking.BLL.csproj", "{5A089C41-35FF-435D-999E-EDC8772F4218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartParking.BLL", "SmartParking.BLL\SmartParking.BLL.csproj", "{5A089C41-35FF-435D-999E-EDC8772F4218}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7E7892FA-F1BC-4433-B0CE-38AC88755DEA} = {7E7892FA-F1BC-4433-B0CE-38AC88755DEA}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.DAL", "SmartParking.DAL\SmartParking.DAL.csproj", "{7E7892FA-F1BC-4433-B0CE-38AC88755DEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartParking.DAL", "SmartParking.DAL\SmartParking.DAL.csproj", "{7E7892FA-F1BC-4433-B0CE-38AC88755DEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.NUnitTests", "SmartParking.NUnitTests\SmartParking.NUnitTests.csproj", "{7C0FAF32-8C01-4846-B99B-1785453A79C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7E7892FA-F1BC-4433-B0CE-38AC88755DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7892FA-F1BC-4433-B0CE-38AC88755DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7892FA-F1BC-4433-B0CE-38AC88755DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0FAF32-8C01-4846-B99B-1785453A79C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0FAF32-8C01-4846-B99B-1785453A79C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0FAF32-8C01-4846-B99B-1785453A79C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0FAF32-8C01-4846-B99B-1785453A79C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
