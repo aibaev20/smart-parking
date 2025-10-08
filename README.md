@@ -19,4 +19,4 @@
 
 To install our project on your machine you just need to clone it in your preferred terminal:
 
-<pre>git clone https://github.com/codingburgas/2324-technologies-11-transport-assignment-aibaev20</pre>
+<pre>git clone https://github.com/aibaev20/smart-parking.git</pre>
